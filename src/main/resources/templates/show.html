@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Bullhorn</title>
+</head>
+<body>
+<a href="/">Show All Courses</a><br/>
+Message :<span th:text="${bullhorn.message}"></span><br/>
+Content :<span th:text="${bullhorn.content}"></span><br/>
+Posted Date :<span th:text="${bullhorn.posteddate}"></span><br/>
+Sent By :<span th:text="${bullhorn.sentby}"></span><br/>
+</body>
+</html>

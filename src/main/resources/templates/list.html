@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Bullhorn Messages</title>
+</head>
+<body>
+<a href="/add">Add a Bullhorn</a><br/>
+<table>
+    <tr>
+        <th>Message</th>
+        <th>Content</th>
+        <th>Posted Date</th>
+        <th>Sent By</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="bullhorn : ${bullhorns}">
+        <td th:text="${bullhorn.message}"></td>
+        <td th:text="${bullhorn.content}"></td>
+        <td th:text="${bullhorn.posteddate}"></td>
+        <td th:text="${bullhorn.sentby}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${bullhorn.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${bullhorn.id})}">Details</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
