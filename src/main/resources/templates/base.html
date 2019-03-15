@@ -2,8 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Bullhorn Messages</title>
-    <meta charset="UTF-8"/>
     <title>Bullhorn</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,42 +14,26 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 </head>
 <body>
-<div class="jumbotron jumbotron-fluid text-center" style="margin-bottom: 0rem" >
-    <h1 class="display-4">Bullhorn</h1>
-    <p class="lead">The Twitter Killer</p>
+<div th:fragment="navlinks">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="/">Messages</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/add">Add Item</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
-<div th:replace="base :: navlinks"></div>
-<div class="container">
-    <table class="table table-dark table-hover">
-        <tr>
-            <th>Message</th>
-            <th>Content</th>
-            <th>Posted Date</th>
-            <th>Sent By</th>
-            <th>Actions</th>
-        </tr>
-        <tr th:each="bullhorn : ${bullhorns}">
-            <td th:text="${bullhorn.message}"></td>
-            <td th:text="${bullhorn.content}"></td>
-            <td th:text="${bullhorn.posteddate}"></td>
-            <td th:text="${bullhorn.sentby}"></td>
-            <td>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Bullhorn Operations
-                </button>
-                    <div class="dropdown-menu">
-                        <a th:href="@{/update/{id}(id=${bullhorn.id})}">Update</a><br/>
-                        <a th:href="@{/detail/{id}(id=${bullhorn.id})}">Details</a><br/>
-                        <a th:href="@{/delete/{id}(id=${bullhorn.id})}">Delete</a><br/>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+<div th:fragment="footer">
+<br/>
+    All Rights reserved. Copyright 2019
+<br/>
 </div>
-
-<div th:replace="base :: footer"></div>
 
 <!-- JavaScript files -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
