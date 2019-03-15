@@ -5,10 +5,11 @@
     <title>Show Bullhorn</title>
 </head>
 <body>
-<a href="/">Show All Courses</a><br/>
+<a href="/">Show All Messages</a><br/>
 Message :<span th:text="${bullhorn.message}"></span><br/>
 Content :<span th:text="${bullhorn.content}"></span><br/>
 Posted Date :<span th:text="${bullhorn.posteddate}"></span><br/>
 Sent By :<span th:text="${bullhorn.sentby}"></span><br/>
+<a th:href="@{/todo-delete/{id}(id=${bullhorn.id})}">Delete this course</a>
 </body>
 </html>

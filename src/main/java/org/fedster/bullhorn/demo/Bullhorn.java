@@ -14,19 +14,19 @@ public class Bullhorn {
     private long id;
 
     @NotNull
-    @Size(min=10, max=30)
+    @Size(min=5, max=50)
     private String message;
 
     @NotNull
-    @Size(min=10, max=150)
+    @Size(min=5, max=150)
     private String content;
 
     @NotNull
-    @Size(min=10)
+    @Size(min=10, max=10)
     private String posteddate;
 
     @NotNull
-    @Size(min=10, max=30)
+    @Size(min=5, max=50)
     private String sentby;
 
     public long getId() {
