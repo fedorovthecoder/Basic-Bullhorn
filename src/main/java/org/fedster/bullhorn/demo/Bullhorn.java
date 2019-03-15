@@ -29,6 +29,8 @@ public class Bullhorn {
     @Size(min=5, max=50)
     private String sentby;
 
+    public String headshot;
+
     public long getId() {
         return id;
     }
@@ -67,5 +69,13 @@ public class Bullhorn {
 
     public void setSentby(String sentby) {
         this.sentby = sentby;
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
     }
 }

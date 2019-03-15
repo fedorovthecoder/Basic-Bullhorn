@@ -28,6 +28,7 @@
             <th>Content</th>
             <th>Posted Date</th>
             <th>Sent By</th>
+            <th>Image</th>
             <th>Actions</th>
         </tr>
         <tr th:each="bullhorn : ${bullhorns}">
@@ -35,6 +36,10 @@
             <td th:text="${bullhorn.content}"></td>
             <td th:text="${bullhorn.posteddate}"></td>
             <td th:text="${bullhorn.sentby}"></td>
+            <td th:if="${bullhorn.headshot} != null">
+                <img th:src="${bullhorn.headshot}"/>
+                <hr/>
+            </td>
             <td>
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
